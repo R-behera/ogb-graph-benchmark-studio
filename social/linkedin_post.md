@@ -1,19 +1,16 @@
-Today I shipped **OGB Graph Benchmark Studio**, a research-backed Graph Benchmarking project inspired by **Open Graph Benchmark: Datasets for Machine Learning on Graphs**.
+Shipped **Supply Network Disruption Benchmark** today.
 
-        What I changed from the base research or repo:
-        1. Turn upstream graph benchmarking capabilities into a production-style application with operations-facing workflows.
-2. Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.
-3. Connect model behavior to concrete business decisions so the project is easier to evaluate and present.
+This one is built around a real workflow for **Supply chain analytics and resilience teams**.
 
-I also reviewed the upstream repo and focused on gaps like: No dedicated docs directory detected for architecture or operations guidance.
+Problem:
+Disruptions spread through supplier networks in ways tabular scorecards miss.
 
-        Why it matters:
-        - easier to demo
-        - easier to operate
-        - easier to explain to product, analytics, and engineering teams
+What it helps decide:
+Prioritize alternate suppliers and contingency plans before disruption spills over.
 
-        Repo: https://github.com/R-behera/ogb-graph-benchmark-studio
-        Paper: https://arxiv.org/abs/2005.00687
-        Screenshot: demo/screenshot.png
+Why that matters:
+Reduce disruption downtime and improve supplier resilience planning.
 
-        #ogb #graph #benchmark #gnn #AI #MachineLearning #LLM #DataScience
+Repo: https://github.com/R-behera/ogb-graph-benchmark-studio
+
+#supplychain #graph #benchmark #risk #AI #MachineLearning #DataScience

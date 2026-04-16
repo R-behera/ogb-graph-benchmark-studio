@@ -1,73 +1,54 @@
 {
   "slug": "ogb-graph-benchmark-studio",
-  "title": "OGB Graph Benchmark Studio",
+  "title": "Supply Network Disruption Benchmark",
   "project_type": "ml",
-  "domain": "Graph Benchmarking",
-  "summary": "Turn graph benchmarking into a studio for dataset selection, model comparisons, and experiment explainability across graph tasks.",
+  "domain": "Supply Chain Risk Analytics",
+  "summary": "Benchmark graph models on supplier, route, and dependency networks to predict disruption spillover across the supply chain.",
   "tags": [
-    "ogb",
+    "supply-chain",
     "graph",
     "benchmark",
-    "gnn"
+    "risk"
   ],
   "accent": "#2c4bc8",
   "secondary_accent": "#832ca9",
   "dashboard_metrics": [
     {
-      "label": "Model Lift",
-      "value": "79%",
-      "delta": "+6.4%"
+      "label": "Spillover Recall",
+      "value": "81%",
+      "delta": "+6.0%"
     },
     {
-      "label": "Serving P95",
-      "value": "178ms",
-      "delta": "-12ms"
+      "label": "Downtime Avoided",
+      "value": "2.6d",
+      "delta": "+0.8d"
     },
     {
-      "label": "Data Freshness",
-      "value": "7h",
-      "delta": "steady"
+      "label": "Simulation Cycle",
+      "value": "3.1h",
+      "delta": "-0.7h"
     }
   ],
   "sample_features": {
-    "engagement_score": 130,
-    "tenure_days": 354,
-    "payment_miss_count": 0,
-    "segment": "mid_market",
-    "priority_flag": false
+    "tier2_supplier_exposure": 0.47,
+    "route_dependency_count": 6,
+    "inventory_buffer_days": 4,
+    "port_risk_score": 0.63,
+    "single_source_component": true
   },
   "sample_metrics": {
-    "acquisition": 76.6,
-    "activation": 66.0,
-    "retention": 73.2,
-    "revenue": 131.2
+    "spillover_recall": 0.81,
+    "buffer_recommendation_accuracy": 0.84,
+    "downtime_days_avoided": 2.6,
+    "simulation_cycle_hours": 3.1
   },
   "knowledge_base": [
-    "OGB Graph Benchmark Studio is positioned as a Graph Benchmarking starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
-    "The primary value proposition is: Turn graph benchmarking into a studio for dataset selection, model comparisons, and experiment explainability across graph tasks.",
-    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
-    "Typical stakeholders include analytics, operations, product, and leadership teams working on ogb, graph, benchmark, gnn.",
-    "Source paper: Open Graph Benchmark: Datasets for Machine Learning on Graphs",
-    "Official repo: https://github.com/snap-stanford/ogb",
-    "Production differentiation focus: Turn upstream graph benchmarking capabilities into a production-style application with operations-facing workflows.; Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.; Connect model behavior to concrete business decisions so the project is easier to evaluate and present."
+    "User: supply chain resilience teams benchmarking disruption models.",
+    "Primary pain: disruption spillover across dependency networks is hard to simulate and explain.",
+    "Decision output: alternate suppliers, expedited shipments, and contingency priorities.",
+    "Business impact: lower downtime and better resilience planning."
   ],
-  "research_key": "ogb-graph-benchmark-studio",
-  "research_score": 9.635,
-  "paper_title": "Open Graph Benchmark: Datasets for Machine Learning on Graphs",
-  "paper_url": "https://arxiv.org/abs/2005.00687",
-  "repo_url": "https://github.com/snap-stanford/ogb",
-  "repo_org": "snap-stanford",
-  "why_high_score": [
-    "Official or primary upstream repo with 2082 GitHub stars.",
-    "Active maintenance signal with recent push at 2025-05-06T07:32:11Z.",
-    "Benchmark datasets, data loaders, and evaluators for graph machine learning"
-  ],
-  "differentiation_hooks": [
-    "Turn upstream graph benchmarking capabilities into a production-style application with operations-facing workflows.",
-    "Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.",
-    "Connect model behavior to concrete business decisions so the project is easier to evaluate and present."
-  ],
-  "app_archetype": "workbench",
+  "app_archetype": "watchtower",
   "ui_profile": {
     "layout": "horizon",
     "surface": "slate",
@@ -81,37 +62,37 @@
   },
   "app_modules": [
     {
-      "label": "Workbench 01",
-      "title": "Candidate Builder",
-      "description": "Evaluate a single candidate, item, or entity against the decision logic.",
+      "label": "Supply 01",
+      "title": "Disruption Scenario",
+      "description": "Score a disruption scenario across the supplier dependency graph.",
       "endpoint": "/score",
       "input_mode": "json",
-      "cta": "Evaluate Candidate",
-      "prefill": "{\n  \"features\": {\n    \"engagement_score\": 130,\n    \"tenure_days\": 354,\n    \"payment_miss_count\": 0,\n    \"segment\": \"mid_market\",\n    \"priority_flag\": false\n  }\n}",
-      "hint": "Candidate score and top factors will appear here.",
+      "cta": "Run Scenario",
+      "prefill": "{\n  \"features\": {\n    \"tier2_supplier_exposure\": 0.47,\n    \"route_dependency_count\": 6,\n    \"inventory_buffer_days\": 4,\n    \"single_source_component\": true\n  }\n}",
+      "hint": "Disruption risk appears here.",
       "span": "normal"
     },
     {
-      "label": "Workbench 02",
-      "title": "Tradeoff Explorer",
-      "description": "Compare multiple operating metrics against a baseline to understand the tradeoffs.",
+      "label": "Supply 02",
+      "title": "Resilience Delta Review",
+      "description": "Compare the current disruption simulation to the previous resilience plan.",
       "endpoint": "/analyze",
       "input_mode": "json",
-      "cta": "Explore Tradeoffs",
-      "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 76.6,\n    \"activation\": 66.0,\n    \"retention\": 73.2,\n    \"revenue\": 131.2\n  },\n  \"baseline\": {\n    \"acquisition\": 70.47,\n    \"activation\": 60.72,\n    \"retention\": 67.34,\n    \"revenue\": 120.7\n  }\n}",
-      "hint": "Tradeoff summary will appear here.",
-      "span": "normal"
+      "cta": "Review Resilience",
+      "prefill": "{\n  \"metrics\": {\n    \"spillover_recall\": 81.0,\n    \"buffer_recommendation_accuracy\": 84.0,\n    \"downtime_days_avoided\": 2.6\n  },\n  \"baseline\": {\n    \"spillover_recall\": 75.0,\n    \"buffer_recommendation_accuracy\": 79.3,\n    \"downtime_days_avoided\": 1.8\n  }\n}",
+      "hint": "Resilience delta appears here.",
+      "span": "wide"
     },
     {
-      "label": "Workbench 03",
-      "title": "Next-Step Planner",
-      "description": "Turn the current signals into an implementation-ready next-step recommendation.",
+      "label": "Supply 03",
+      "title": "Contingency Memo",
+      "description": "Draft the next-step contingency plan for supply chain leaders.",
       "endpoint": "/recommend",
       "input_mode": "json",
-      "cta": "Plan Next Step",
-      "prefill": "{\n  \"prompt\": \"Recommend the next best action for OGB Graph Benchmark Studio.\",\n  \"features\": {\n    \"engagement_score\": 130,\n    \"tenure_days\": 354,\n    \"payment_miss_count\": 0,\n    \"segment\": \"mid_market\",\n    \"priority_flag\": false\n  },\n  \"metrics\": {\n    \"acquisition\": 76.6,\n    \"activation\": 66.0,\n    \"retention\": 73.2,\n    \"revenue\": 131.2\n  }\n}",
-      "hint": "Recommended actions and rationale will appear here.",
-      "span": "wide"
+      "cta": "Draft Plan",
+      "prefill": "{\n  \"prompt\": \"Write the contingency plan for a port-linked supplier disruption.\",\n  \"features\": {\n    \"port_risk_score\": 0.63,\n    \"single_source_component\": true\n  },\n  \"metrics\": {\n    \"spillover_recall\": 0.81,\n    \"downtime_days_avoided\": 2.6\n  }\n}",
+      "hint": "Contingency memo appears here.",
+      "span": "normal"
     }
   ]
 }

@@ -1,10 +1,17 @@
+# Evaluation plan
 
-# Evaluation
+        ## Business objective
 
-This starter emphasizes clarity and handoff quality:
+        Reduce disruption downtime and improve supplier resilience planning.
 
-- Confirm API availability and metadata integrity in CI.
-- Validate domain outputs with subject matter review.
-- Track one primary KPI from the application card set: Model Lift.
-- For RAG/LLM projects, review grounded context quality before wider rollout.
-- For ML/analytics projects, compare outputs against a business baseline before productionizing.
+        ## Primary evaluation dimensions
+
+        - Spillover Recall: 81% (+6.0%)
+- Downtime Avoided: 2.6d (+0.8d)
+- Simulation Cycle: 3.1h (-0.7h)
+
+        ## What success looks like
+
+        - The workflow produces a better operational decision than the baseline.
+        - Outputs are understandable enough for the target user to act on.
+        - The project shows a believable path from research to production use.
