@@ -1,0 +1,114 @@
+
+        <!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>OGB Graph Benchmark Studio</title>
+          <link rel="stylesheet" href="./styles.css">
+        </head>
+        <body class="surface-slate">
+          <div class="page layout-horizon eyebrow-soft headline-normal modules-3 hero-align-split">
+            <section class="hero">
+              <div class="panel hero-copy">
+                <span class="eyebrow" data-health>Decision Workbench</span>
+                <h1 id="project-title">OGB Graph Benchmark Studio</h1>
+                <p id="project-summary" class="lead">Turn graph benchmarking into a studio for dataset selection, model comparisons, and experiment explainability across graph tasks.</p>
+                <ul id="project-tags" class="tag-list">
+                  <li>ogb</li><li>graph</li><li>benchmark</li><li>gnn</li>
+                </ul>
+              </div>
+              <div class="panel hero-side">
+                <div class="metric-grid">
+                  <article class='card'><span>Model Lift</span><strong>79%</strong><em>+6.4%</em></article>
+<article class='card'><span>Serving P95</span><strong>178ms</strong><em>-12ms</em></article>
+<article class='card'><span>Data Freshness</span><strong>7h</strong><em>steady</em></article>
+                </div>
+                <div class="mini-grid">
+                  <article class='mini-card'><span>Project Type</span><strong>ML</strong></article><article class='mini-card'><span>Domain</span><strong>Graph Benchmarking</strong></article><article class='mini-card'><span>Application</span><strong>Decision Workbench</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
+                </div>
+              </div>
+            </section>
+            <section class="app-grid">
+              <article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Workbench 01</span>
+            <h2>Candidate Builder</h2>
+            <p>Evaluate a single candidate, item, or entity against the decision logic.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;features&quot;: {
+    &quot;engagement_score&quot;: 130,
+    &quot;tenure_days&quot;: 354,
+    &quot;payment_miss_count&quot;: 0,
+    &quot;segment&quot;: &quot;mid_market&quot;,
+    &quot;priority_flag&quot;: false
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/score" data-input-mode="json">Evaluate Candidate</button>
+          </div>
+          <pre class="js-output">Candidate score and top factors will appear here.</pre>
+        </article>
+<article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Workbench 02</span>
+            <h2>Tradeoff Explorer</h2>
+            <p>Compare multiple operating metrics against a baseline to understand the tradeoffs.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 76.6,
+    &quot;activation&quot;: 66.0,
+    &quot;retention&quot;: 73.2,
+    &quot;revenue&quot;: 131.2
+  },
+  &quot;baseline&quot;: {
+    &quot;acquisition&quot;: 70.47,
+    &quot;activation&quot;: 60.72,
+    &quot;retention&quot;: 67.34,
+    &quot;revenue&quot;: 120.7
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/analyze" data-input-mode="json">Explore Tradeoffs</button>
+          </div>
+          <pre class="js-output">Tradeoff summary will appear here.</pre>
+        </article>
+<article class="panel module js-module span-wide">
+          <div class="module-header">
+            <span>Workbench 03</span>
+            <h2>Next-Step Planner</h2>
+            <p>Turn the current signals into an implementation-ready next-step recommendation.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;prompt&quot;: &quot;Recommend the next best action for OGB Graph Benchmark Studio.&quot;,
+  &quot;features&quot;: {
+    &quot;engagement_score&quot;: 130,
+    &quot;tenure_days&quot;: 354,
+    &quot;payment_miss_count&quot;: 0,
+    &quot;segment&quot;: &quot;mid_market&quot;,
+    &quot;priority_flag&quot;: false
+  },
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 76.6,
+    &quot;activation&quot;: 66.0,
+    &quot;retention&quot;: 73.2,
+    &quot;revenue&quot;: 131.2
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Plan Next Step</button>
+          </div>
+          <pre class="js-output">Recommended actions and rationale will appear here.</pre>
+        </article>
+            </section>
+            <footer class="footer">
+              <span>Graph Benchmarking • ML • Decision Workbench</span>
+              <span>ogb-graph-benchmark-studio</span>
+            </footer>
+          </div>
+          <script id="bootstrap-data" type="application/json">{"project": {"slug": "ogb-graph-benchmark-studio", "title": "OGB Graph Benchmark Studio", "project_type": "ml", "domain": "Graph Benchmarking", "summary": "Turn graph benchmarking into a studio for dataset selection, model comparisons, and experiment explainability across graph tasks.", "tags": ["ogb", "graph", "benchmark", "gnn"]}, "app_archetype": "workbench", "ui_profile": {"layout": "horizon", "surface": "slate", "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif", "radius": 28, "shadow": 62, "eyebrow_style": "soft", "module_columns": 3, "hero_align": "split", "headline_mode": "normal"}, "app_modules": [{"label": "Workbench 01", "title": "Candidate Builder", "description": "Evaluate a single candidate, item, or entity against the decision logic.", "endpoint": "/score", "input_mode": "json", "cta": "Evaluate Candidate", "prefill": "{\n  \"features\": {\n    \"engagement_score\": 130,\n    \"tenure_days\": 354,\n    \"payment_miss_count\": 0,\n    \"segment\": \"mid_market\",\n    \"priority_flag\": false\n  }\n}", "hint": "Candidate score and top factors will appear here.", "span": "normal"}, {"label": "Workbench 02", "title": "Tradeoff Explorer", "description": "Compare multiple operating metrics against a baseline to understand the tradeoffs.", "endpoint": "/analyze", "input_mode": "json", "cta": "Explore Tradeoffs", "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 76.6,\n    \"activation\": 66.0,\n    \"retention\": 73.2,\n    \"revenue\": 131.2\n  },\n  \"baseline\": {\n    \"acquisition\": 70.47,\n    \"activation\": 60.72,\n    \"retention\": 67.34,\n    \"revenue\": 120.7\n  }\n}", "hint": "Tradeoff summary will appear here.", "span": "normal"}, {"label": "Workbench 03", "title": "Next-Step Planner", "description": "Turn the current signals into an implementation-ready next-step recommendation.", "endpoint": "/recommend", "input_mode": "json", "cta": "Plan Next Step", "prefill": "{\n  \"prompt\": \"Recommend the next best action for OGB Graph Benchmark Studio.\",\n  \"features\": {\n    \"engagement_score\": 130,\n    \"tenure_days\": 354,\n    \"payment_miss_count\": 0,\n    \"segment\": \"mid_market\",\n    \"priority_flag\": false\n  },\n  \"metrics\": {\n    \"acquisition\": 76.6,\n    \"activation\": 66.0,\n    \"retention\": 73.2,\n    \"revenue\": 131.2\n  }\n}", "hint": "Recommended actions and rationale will appear here.", "span": "wide"}], "sample_features": {"engagement_score": 130, "tenure_days": 354, "payment_miss_count": 0, "segment": "mid_market", "priority_flag": false}, "sample_metrics": {"acquisition": 76.6, "activation": 66.0, "retention": 73.2, "revenue": 131.2}, "knowledge_base": ["OGB Graph Benchmark Studio is positioned as a Graph Benchmarking starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Turn graph benchmarking into a studio for dataset selection, model comparisons, and experiment explainability across graph tasks.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on ogb, graph, benchmark, gnn.", "Source paper: Open Graph Benchmark: Datasets for Machine Learning on Graphs", "Official repo: https://github.com/snap-stanford/ogb", "Production differentiation focus: Turn upstream graph benchmarking capabilities into a production-style application with operations-facing workflows.; Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.; Connect model behavior to concrete business decisions so the project is easier to evaluate and present."], "dashboard_metrics": [{"label": "Model Lift", "value": "79%", "delta": "+6.4%"}, {"label": "Serving P95", "value": "178ms", "delta": "-12ms"}, {"label": "Data Freshness", "value": "7h", "delta": "steady"}]}</script>
+          <script src="./app.js"></script>
+        </body>
+        </html>

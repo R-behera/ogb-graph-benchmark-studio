@@ -1,0 +1,91 @@
+{
+  "upstream": {
+    "owner": "snap-stanford",
+    "repo": "ogb",
+    "source_url": "https://github.com/snap-stanford/ogb",
+    "local_path": "/Users/Rb/Documents/LLM based projects /sources/snap-stanford__ogb",
+    "branch": "master",
+    "default_branch": "master",
+    "commit": "61e9784ca76edeaa6e259ba0f836099608ff0586",
+    "fork_requested": false,
+    "fork_result": ""
+  },
+  "audit": {
+    "file_count": 264,
+    "text_file_count": 208,
+    "top_suffixes": [
+      [
+        ".py",
+        168
+      ],
+      [
+        ".md",
+        31
+      ],
+      [
+        ".png",
+        21
+      ],
+      [
+        ".rst",
+        15
+      ],
+      [
+        "<none>",
+        8
+      ],
+      [
+        ".list",
+        6
+      ],
+      [
+        ".yaml",
+        4
+      ],
+      [
+        ".csv",
+        3
+      ]
+    ],
+    "style_counts": {
+      "PascalCase": 38,
+      "other": 133,
+      "hidden": 3,
+      "snake_case": 82,
+      "kebab-case": 8
+    },
+    "token_hits": {
+      "TODO": [
+        "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/ke_model.py",
+        "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/general_models.py",
+        "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/mxnet/score_fun.py",
+        "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/mxnet/tensor_models.py",
+        "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/pytorch/ke_tensor.py",
+        "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/pytorch/score_fun.py",
+        "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/pytorch/tensor_models.py"
+      ]
+    },
+    "findings": [
+      "No dedicated docs directory detected for architecture or operations guidance.",
+      "No obvious tests directory or test files detected.",
+      "No GitHub Actions workflow detected for repeatable checks.",
+      "No container packaging signal detected, which makes demos and deployment less portable.",
+      "No obvious Python dependency manifest was found.",
+      "Mixed filename conventions detected: PascalCase, kebab-case, snake_case.",
+      "Open maintenance markers detected: TODO in 7 file(s).",
+      "Large files that may benefit from decomposition: examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/ke_model.py (978 lines), examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/dataloader/sampler.py (835 lines), examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/dataloader/KGDataset.py (789 lines)."
+    ],
+    "strengths": [
+      "Repository has a top-level README."
+    ],
+    "largest_files": [
+      "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/models/ke_model.py (978 lines)",
+      "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/dataloader/sampler.py (835 lines)",
+      "examples/lsc/wikikg90m/dgl-ke-ogb-lsc/python/dglke/dataloader/KGDataset.py (789 lines)"
+    ],
+    "has_tests": false,
+    "has_docs": false,
+    "has_ci": false,
+    "has_docker": false
+  }
+}

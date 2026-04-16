@@ -1,0 +1,15 @@
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ogb-graph-benchmark-studio"
+version = "0.1.0"
+description = "Turn graph benchmarking into a studio for dataset selection, model comparisons, and experiment explainability across graph tasks."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
