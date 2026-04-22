@@ -1,106 +1,29 @@
-
-        <!doctype html>
-        <html lang="en">
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Supply Network Disruption Benchmark</title>
-          <link rel="stylesheet" href="./styles.css">
-        </head>
-        <body class="surface-slate">
-          <div class="page layout-horizon eyebrow-soft headline-normal modules-3 hero-align-split">
-            <section class="hero">
-              <div class="panel hero-copy">
-                <span class="eyebrow" data-health>Signal Watchtower</span>
-                <h1 id="project-title">Supply Network Disruption Benchmark</h1>
-                <p id="project-summary" class="lead">Benchmark graph models on supplier, route, and dependency networks to predict disruption spillover across the supply chain.</p>
-                <ul id="project-tags" class="tag-list">
-                  <li>supply-chain</li><li>graph</li><li>benchmark</li><li>risk</li>
-                </ul>
-              </div>
-              <div class="panel hero-side">
-                <div class="metric-grid">
-                  <article class='card'><span>Spillover Recall</span><strong>81%</strong><em>+6.0%</em></article>
-<article class='card'><span>Downtime Avoided</span><strong>2.6d</strong><em>+0.8d</em></article>
-<article class='card'><span>Simulation Cycle</span><strong>3.1h</strong><em>-0.7h</em></article>
-                </div>
-                <div class="mini-grid">
-                  <article class='mini-card'><span>Project Type</span><strong>ML</strong></article><article class='mini-card'><span>Domain</span><strong>Supply Chain Risk Analytics</strong></article><article class='mini-card'><span>Application</span><strong>Signal Watchtower</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
-                </div>
-              </div>
-            </section>
-            <section class="app-grid">
-              <article class="panel module js-module span-normal">
-          <div class="module-header">
-            <span>Supply 01</span>
-            <h2>Disruption Scenario</h2>
-            <p>Score a disruption scenario across the supplier dependency graph.</p>
-          </div>
-          <textarea class="js-input">{
-  &quot;features&quot;: {
-    &quot;tier2_supplier_exposure&quot;: 0.47,
-    &quot;route_dependency_count&quot;: 6,
-    &quot;inventory_buffer_days&quot;: 4,
-    &quot;single_source_component&quot;: true
-  }
-}</textarea>
-          <div class="button-row">
-            <button class="js-run" data-endpoint="/score" data-input-mode="json">Run Scenario</button>
-          </div>
-          <pre class="js-output">Disruption risk appears here.</pre>
-        </article>
-<article class="panel module js-module span-wide">
-          <div class="module-header">
-            <span>Supply 02</span>
-            <h2>Resilience Delta Review</h2>
-            <p>Compare the current disruption simulation to the previous resilience plan.</p>
-          </div>
-          <textarea class="js-input">{
-  &quot;metrics&quot;: {
-    &quot;spillover_recall&quot;: 81.0,
-    &quot;buffer_recommendation_accuracy&quot;: 84.0,
-    &quot;downtime_days_avoided&quot;: 2.6
-  },
-  &quot;baseline&quot;: {
-    &quot;spillover_recall&quot;: 75.0,
-    &quot;buffer_recommendation_accuracy&quot;: 79.3,
-    &quot;downtime_days_avoided&quot;: 1.8
-  }
-}</textarea>
-          <div class="button-row">
-            <button class="js-run" data-endpoint="/analyze" data-input-mode="json">Review Resilience</button>
-          </div>
-          <pre class="js-output">Resilience delta appears here.</pre>
-        </article>
-<article class="panel module js-module span-normal">
-          <div class="module-header">
-            <span>Supply 03</span>
-            <h2>Contingency Memo</h2>
-            <p>Draft the next-step contingency plan for supply chain leaders.</p>
-          </div>
-          <textarea class="js-input">{
-  &quot;prompt&quot;: &quot;Write the contingency plan for a port-linked supplier disruption.&quot;,
-  &quot;features&quot;: {
-    &quot;port_risk_score&quot;: 0.63,
-    &quot;single_source_component&quot;: true
-  },
-  &quot;metrics&quot;: {
-    &quot;spillover_recall&quot;: 0.81,
-    &quot;downtime_days_avoided&quot;: 2.6
-  }
-}</textarea>
-          <div class="button-row">
-            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Draft Plan</button>
-          </div>
-          <pre class="js-output">Contingency memo appears here.</pre>
-        </article>
-            </section>
-            <footer class="footer">
-              <span>Supply Chain Risk Analytics • ML • Signal Watchtower</span>
-              <span>ogb-graph-benchmark-studio</span>
-            </footer>
-          </div>
-          <script id="bootstrap-data" type="application/json">{"project": {"slug": "ogb-graph-benchmark-studio", "title": "Supply Network Disruption Benchmark", "project_type": "ml", "domain": "Supply Chain Risk Analytics", "summary": "Benchmark graph models on supplier, route, and dependency networks to predict disruption spillover across the supply chain.", "tags": ["supply-chain", "graph", "benchmark", "risk"]}, "app_archetype": "watchtower", "ui_profile": {"layout": "horizon", "surface": "slate", "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif", "radius": 28, "shadow": 62, "eyebrow_style": "soft", "module_columns": 3, "hero_align": "split", "headline_mode": "normal"}, "app_modules": [{"label": "Supply 01", "title": "Disruption Scenario", "description": "Score a disruption scenario across the supplier dependency graph.", "endpoint": "/score", "input_mode": "json", "cta": "Run Scenario", "prefill": "{\n  \"features\": {\n    \"tier2_supplier_exposure\": 0.47,\n    \"route_dependency_count\": 6,\n    \"inventory_buffer_days\": 4,\n    \"single_source_component\": true\n  }\n}", "hint": "Disruption risk appears here.", "span": "normal"}, {"label": "Supply 02", "title": "Resilience Delta Review", "description": "Compare the current disruption simulation to the previous resilience plan.", "endpoint": "/analyze", "input_mode": "json", "cta": "Review Resilience", "prefill": "{\n  \"metrics\": {\n    \"spillover_recall\": 81.0,\n    \"buffer_recommendation_accuracy\": 84.0,\n    \"downtime_days_avoided\": 2.6\n  },\n  \"baseline\": {\n    \"spillover_recall\": 75.0,\n    \"buffer_recommendation_accuracy\": 79.3,\n    \"downtime_days_avoided\": 1.8\n  }\n}", "hint": "Resilience delta appears here.", "span": "wide"}, {"label": "Supply 03", "title": "Contingency Memo", "description": "Draft the next-step contingency plan for supply chain leaders.", "endpoint": "/recommend", "input_mode": "json", "cta": "Draft Plan", "prefill": "{\n  \"prompt\": \"Write the contingency plan for a port-linked supplier disruption.\",\n  \"features\": {\n    \"port_risk_score\": 0.63,\n    \"single_source_component\": true\n  },\n  \"metrics\": {\n    \"spillover_recall\": 0.81,\n    \"downtime_days_avoided\": 2.6\n  }\n}", "hint": "Contingency memo appears here.", "span": "normal"}], "sample_features": {"tier2_supplier_exposure": 0.47, "route_dependency_count": 6, "inventory_buffer_days": 4, "port_risk_score": 0.63, "single_source_component": true}, "sample_metrics": {"spillover_recall": 0.81, "buffer_recommendation_accuracy": 0.84, "downtime_days_avoided": 2.6, "simulation_cycle_hours": 3.1}, "knowledge_base": ["User: supply chain resilience teams benchmarking disruption models.", "Primary pain: disruption spillover across dependency networks is hard to simulate and explain.", "Decision output: alternate suppliers, expedited shipments, and contingency priorities.", "Business impact: lower downtime and better resilience planning."], "dashboard_metrics": [{"label": "Spillover Recall", "value": "81%", "delta": "+6.0%"}, {"label": "Downtime Avoided", "value": "2.6d", "delta": "+0.8d"}, {"label": "Simulation Cycle", "value": "3.1h", "delta": "-0.7h"}]}</script>
-          <script src="./app.js"></script>
-        </body>
-        </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supply Network Disruption Benchmark App</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div id="scene" class="app-scene">
+    <header class="shell hero">
+      <div>
+        <span class="eyebrow">Graph intelligence</span>
+        <h1>Supply Network Disruption Benchmark</h1>
+        <p>![Demo Screenshot](demo/screenshot.png)</p>
+      </div>
+      <aside class="status-card">
+        <div class="pill">API connected</div>
+        <div class="pill">network investigator</div>
+        <div class="pill">signal-wave</div>
+      </aside>
+    </header>
+    <section id="metrics" class="grid metrics"></section>
+    <section id="signals" class="grid signals"></section>
+  </div>
+  <script>window.PROJECT_MANIFEST = {"slug": "ogb-graph-benchmark-studio", "title": "Supply Network Disruption Benchmark", "summary": "![Demo Screenshot](demo/screenshot.png)", "domain": "Graph intelligence", "audience": "network investigator", "promise": "Expose entity relationships and signals in a form analysts can actually use.", "hero": ["Production-grade app scaffold with API, CI, tests, Docker, and GitHub Pages landing.", "3D landing surface designed for GitHub Pages and recruiter-friendly storytelling.", "App backend structured for local or container deployment without changing the product narrative."], "kpis": [{"label": "Workflow clarity", "value": "84%", "note": "Operator actions mapped to product stages"}, {"label": "Deployment posture", "value": "API + Docker", "note": "Local and containerized startup paths"}, {"label": "Presentation layer", "value": "3D Pages ready", "note": "Static GitHub landing page included"}], "stages": ["ingest", "validate", "analyze", "decide", "monitor"], "cards": [{"title": "Operator cockpit", "body": "One-screen surface for the network investigator to understand what matters first."}, {"title": "API contract", "body": "Structured endpoints for health, manifest, readiness, and showcase data."}, {"title": "Deployment path", "body": "Repository includes Docker, Compose, CI workflow, and a Pages-ready landing surface."}], "scene": "signal-wave", "theme": {"bg": "#08100e", "surface": "#101d1a", "ink": "#ebfff8", "muted": "#8eb5a6", "accent": "#4ce0b3", "accent2": "#8fb8ff"}, "pages_url": "https://r-behera.github.io/ogb-graph-benchmark-studio/", "api_examples": {"health": {"status": "ok", "project": "ogb-graph-benchmark-studio"}, "readiness": {"api": "ready", "landing_page": "docs/index.html", "container": "Dockerfile present"}, "signals": [{"name": "Decision coverage", "status": "strong", "detail": "App and landing narrative aligned"}, {"name": "Operator context", "status": "strong", "detail": "Primary user anchored as network investigator"}, {"name": "Delivery path", "status": "ready", "detail": "Pages + containerized app scaffold generated"}]}};</script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
